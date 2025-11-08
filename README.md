@@ -108,6 +108,9 @@ POST /
 PUT /:message_id
 DELETE /:message_id
 
+## ToDo 
+
+A mejorar el sistema de invitacion para conversaciones en tiempo real en el workspace invitado.
 
 ## 📦 Instalación
 

@@ -19,12 +19,11 @@ const allowedOrigins = [
     'http://localhost:5173'
 ];
 
-// ✅ CONFIGURACIÓN CORS MEJORADA
+
 const corsOptions = {
     origin: function (origin, callback) {
         console.log('🔍 Request from origin:', origin);
         
-        // Permitir requests sin origin (mobile apps, curl, postman)
         if (!origin) {
             console.log('✅ Allowing request without origin');
             return callback(null, true);
@@ -50,15 +49,15 @@ const corsOptions = {
         'Origin'
     ],
     exposedHeaders: ['Set-Cookie'],
-    maxAge: 86400, // 24 horas
+    maxAge: 86400, 
     preflightContinue: false,
     optionsSuccessStatus: 204
 };
 
-// ✅ APLICAR CORS GLOBALMENTE
+
 app.use(cors(corsOptions));
 
-// ✅ MIDDLEWARE MANUAL CORS (backup por si el paquete falla en Vercel)
+
 app.use((req, res, next) => {
     const origin = req.headers.origin;
     
@@ -70,7 +69,6 @@ app.use((req, res, next) => {
         res.header('Access-Control-Expose-Headers', 'Set-Cookie');
     }
     
-    // Handle preflight
     if (req.method === 'OPTIONS') {
         return res.status(204).end();
     }
@@ -121,7 +119,7 @@ app.get('/', (req, res) => {
     });
 });
 
-// ✅ MANEJO DE ERRORES CORS
+
 app.use((err, req, res, next) => {
     console.error('Error global:', err);
 
