@@ -15,7 +15,7 @@ import member_router from "./routes/member.router.js";
 const app = express()
 
 const allowedOrigins = [
-    'https://front-slack-neon.vercel.app',
+    'https://pf-frontend-eta-plum.vercel.app',
     'http://localhost:5173'
 ];
 
