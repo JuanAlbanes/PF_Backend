@@ -108,10 +108,6 @@ POST /
 PUT /:message_id
 DELETE /:message_id
 
-## ToDo Mejoras
-
-El back esta completamente funcional e integrado con el front,(CRUD en workspace, canales y mensajes), si se registra un usuario y verifica el mail podrá hacer el login y cuando haga la invitacion tambien lo logrará hacer, cuando se hacen los mailer tanto de registro como de invitacion a un workspace los mail y los redirect funcionan, PERO queda a mejorar que si desde la misma redireccion se intenta loguear aveces falla, no logre encontrar el fallo.
-
 
 ## 📦 Instalación
 
